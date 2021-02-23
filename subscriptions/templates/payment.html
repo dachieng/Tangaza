@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+
+{% block content%}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Package Payment </h1>
+
+<form action="/subscriptions/confirmation" method="post">
+{% csrf_token %}
+  <div class="row">
+  <div class="col-xm-2 col-sm-2 col-md-2 col-lg-2">
+  <label for="TotalAmount">AMOUNT:</label>
+  </div><br><br>
+  <div class="col-xm-8 col-sm-8 col-md-8">
+  <input type="number" id="TotalAmount" class="form-control" name="TotalAmount" value="{{subscription.TotalAmount}}"><br><br>
+  </div>
+  </div>
+ 
+
+  
+  
+  <input type="hidden" id="Subscription_id" name="Subscription_id" value="{{subscription.id}}">
+  <input type="hidden" id="User_id" name="User_id" value="1" >
+  <input type="submit" value="Submit" class="btn btn-outline-dark">
+</form>
+
+{% endblock %}
+
+</body>
+</html>
+

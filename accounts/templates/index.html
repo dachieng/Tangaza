@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block content %}
+  {% for upload in products %}
+ 
+  <div class="col-md-4 col-xm-6 col-xm-6">
+      <div class="card">
+          <div class="card-header">{{upload.productname}}</div>
+          <div class="card-img-top">
+                  <img class="img-fluid" src="{{upload.image.url}}">
+          </div>
+          <p> <b>Product Name</b> {{upload.productname}}</p>
+          <p><b>Price</b> {{upload.price}}</p>
+          <div class="row">
+            <div class="col-sm-2">
+              <a href="{{ upload.id }}"><button class="btn btn-outline-dark">Details</button></a>
+            </div>
+          </div>
+      </div>
+  </div>
+
+  
+  {% endfor %}
+
+{% endblock %}

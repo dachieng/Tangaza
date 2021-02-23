@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="row">
+   
+    <div class="col-md-4 col-xm-6 col-sm-6">
+        <div class="card">
+            <div class="card-header">{{upload.productname}}</div>
+            <div class="card-img-top">
+                    <img class="img-fluid" src="{{upload.image.url}}">
+            </div>
+            <p> <b>Product Name</b> {{upload.productname}}</p>
+            <p><b>Price</b> {{upload.price}}</p>
+            <p><b>Quantity</b> {{upload.quantity}}</p>
+            <p><b>Description</b> {{upload.desription}} </p>
+            <p><b>Category</b> {{upload.category }} </p>
+            <p><b>Seller</b> {{user.first_name }} {{user.last_name }} </p>
+            <p><b>Email</b> {{user.email }} </p>
+        </div>
+    </div>
+  
+    
+    
+    
+    </div>
+
+{% endblock %}

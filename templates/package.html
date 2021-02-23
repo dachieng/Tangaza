@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+
+{% block content%}
+{% load static %}
+
+<style>
+.card{
+  float:left !important;
+  
+}
+</style>
+
+ <h3 class="text-center">Subscription Packages</h3>
+<!--
+ <div class="container">
+
+ 
+ 
+  {% for o in object %}
+<div class = "row">
+<div class="col-md-3">
+
+<div class="box">
+  <div class="content">
+<h1>{{o.SubscriptionType}}</h1>
+<p>PRICE:KES{{o.TotalAmount}}</p>
+<p>MONTHS:{{o.NumberofDuration}}<br>
+<p>{{o.description}}</p>
+<p><button style="background-color: red"><a href="pay/{{o.id}}">Subscribe</button></p>
+<br><br></p>
+      </div>
+      </div>
+  </div>
+</div>
+{% endfor %} 
+
+-->
+
+<div class="row m-2">
+  {% for o in  object %}
+ 
+  <div class="col-md-2 col-sm-6 col-xm-6">
+      <div class="card p-2 text-light bg-dark" >
+          
+          <div class="row"><b>{{o.SubscriptionType}} </b></div>
+          <p>PRICE(KES):{{o.TotalAmount}}</p>
+          <p>MONTHS:{{o.NumberofDuration}}<br>
+          <p>{{o.description}}</p>
+          
+          <div class="row">
+            <div class="col-sm-2">
+              <a href="pay/{{ o.id }}"><button class="btn btn-outline-light">Subscribe</button></a>
+            </div>
+          </div>
+      </div>
+  </div>
+
+  
+  {% endfor %}
+  
+  </div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="card pb-100">
+        <div class="card-header text-center"><h4>Product Upload</h4></div>
+        <div class="card-body">
+
+        <form method="post" action="/products/edit">
+            {% csrf_token %}
+            
+             <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="name">Product Name</label>
+                <div class="col-md-8"> 
+                <input class="form-control" type="text" name="name"  value="{{product.productname}}">
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="price">Price</label>
+                <div class="col-md-8">
+                <input class="form-control" type="number" name="price"  value="{{product.price}}">
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="number">Quantity</label>
+                <div class="col-md-8">
+                <input class="form-control" type="number" name="quantity"  value="{{product.quantity}}">
+                </div>
+            </div>  
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="details">Brief Description</label>
+                <div class="col-md-8">
+                <textarea name="details" id="" style="max-width: 95%;" cols="30" rows="5">{{product.description}}</textarea>
+                </div>
+            </div> 
+            
+            
+            
+              
+            <input type="hidden" name="user_id" value="{{current_user.id}}">
+            <input type="hidden" name="id" value="{{product.id}}">
+
+
+            <input type="submit" value="submit" class="btn btn-outline-dark">
+        </form>
+        </div>           
+        
+    </div>
+ 
+{% endblock %}

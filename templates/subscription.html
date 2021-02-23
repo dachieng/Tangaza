@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" lang="en" xmlns="http://www.w3.org/1999/xhtml" content="width=device-width, initial-scale=1">
+    <style>
+        
+    </style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'subscription.css' %}" />
+</head>
+<body>
+
+    <h3>Subscription form</h3>
+
+    <div class="container">
+        <form action="save" method="post">
+        {% csrf_token %}
+            <label for="Sname">Subscription type</label> <br />
+            <input type="text" id="Sname" name="SubscriptionType" placeholder="The subscription type.."> <br />
+
+            <label for="DurationNo">Duration</label>
+            <input type="number" id="DurationNo" name="NumberofDuration" placeholder="Your suscription duration..">
+
+            <label for="Tamount">Amount</label>
+            <input type="number" id="Tamount" name="TotalAmount" placeholder="The total amount payable..">
+
+            <label for="description">Description</label>
+            <textarea id="description" name="description" placeholder="More information on the subscription type.." style="height:200px"></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+</html>

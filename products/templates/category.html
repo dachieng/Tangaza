@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+    <div class="card">
+        <div class="card-header text-center"><h4>Category</h4></div>
+        <div class="card-body">
+            <form action="savecategory" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label for="" class="col-form-label">Category Name</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" name="name" placeholder="Category Name">
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="submit" class="btn btn-outline-dark">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

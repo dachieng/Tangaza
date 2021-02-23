@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'styles/bootstrap/css/bootstrap.min.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'styles/fontawesome/css/all.css' %}">
+
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+
+    <div class="container py-2 px-2">
+      <a class="navbar-brand"  href="/">Tangaza</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div >
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ">
+          
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="/products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa fa-user-o"></i>{{user.first_name}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+        {% else %}
+
+          <li class="nav-item">
+            <a class="nav-link active"  href="register">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login">Sign In</a>
+          </li>
+        </ul>
+        
+        {% endif %}
+      </div>
+    </div>
+    </div>
+</nav>
+<div class="container">
+<div class="row">
+{% block content %}
+{% endblock %}
+</div>
+</div>
+
+<script src="{% static 'styles/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap/js/jquery.js' %}"></script>
+<script src="{% static 'styles/script.js' %}"></script>
+</body>
+</html>
