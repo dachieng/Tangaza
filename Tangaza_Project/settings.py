@@ -82,7 +82,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'Tangaza_Project',
-        'PASSWORD':'Dickson@2021',
+        'PASSWORD':'Viona@1999',
         'PORT':'3306',
         'HOST':'localhost',
         'USER':'root',
